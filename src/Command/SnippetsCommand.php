@@ -43,7 +43,7 @@ EOF;
     sort($result);
 
     $table = new Table($this->output);
-    // $table->setStyle('compact');
+    $table->setHeaders(['Title', 'Owner', 'ID']);
     $table->setRows($result);
     $table->render();
 

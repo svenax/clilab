@@ -39,7 +39,7 @@ EOF;
     sort($result);
 
     $table = new Table($this->output);
-    // $table->setStyle('compact');
+    $table->setHeaders(['Full Name', 'User', 'ID']);
     $table->setRows($result);
     $table->render();
 

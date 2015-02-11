@@ -29,13 +29,14 @@ EOF;
     $result = array();
     foreach ($groups as $group) {
       $result[] = array(
-        $group['name']
+        $group['name'],
+        $group['id'],
       );
     }
     sort($result);
 
     $table = new Table($this->output);
-    // $table->setStyle('compact');
+    $table->setHeaders(['Name', 'ID']);
     $table->setRows($result);
     $table->render();
 
