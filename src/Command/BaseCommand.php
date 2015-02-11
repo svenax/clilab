@@ -67,6 +67,6 @@ abstract class BaseCommand extends Command
       $string = $id;
     }
 
-    return $this->myId() == $id ? "<info>{$string}</info>" : $string;
+    return $this->myId() == $id ? "<comment>{$string}</comment>" : $string;
   }
 }
