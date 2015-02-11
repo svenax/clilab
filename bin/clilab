@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+use CliLab\Command\GroupsCommand;
+use CliLab\Command\SnippetsCommand;
+use CliLab\Command\UsersCommand;
+
+$app = new Application('CliLab - GitLab Command Line Tool', '0.1.0');
+$app->add(new GroupsCommand());
+$app->add(new SnippetsCommand());
+$app->add(new UsersCommand());
+$app->run();
