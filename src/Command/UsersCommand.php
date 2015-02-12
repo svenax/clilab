@@ -3,7 +3,7 @@ namespace CliLab\Command;
 
 use Symfony\Component\Console\Helper\Table;
 
-class UsersCommand extends BaseCommand
+class UsersCommand extends CommandBase
 {
   protected function createName()
   {
