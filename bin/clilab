@@ -4,6 +4,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
+use Symfony\Component\Finder\Finder;
 
 $app = new Application('CliLab - GitLab Command Line Tool', '0.1.0');
 loadAllCommands($app);
@@ -11,9 +12,14 @@ $app->run();
 
 function loadAllCommands(Application $app)
 {
-  $dirIter = new \GlobIterator(__DIR__ . '/../src/Command/*Command.php');
-  foreach ($dirIter as $fileInfo) {
-    $commandName = "CliLab\\Command\\{$fileInfo->getBasename('.php')}";
+  $files = new Finder;
+  $files->files()
+    ->name('*Command.php')
+    ->notName('BaseCommand.php')
+    ->in(__DIR__ . '/../src/Command');
+
+  foreach ($files as $file) {
+    $commandName = "CliLab\\Command\\{$file->getBasename('.php')}";
     $app->add(new $commandName);
   }
 }
