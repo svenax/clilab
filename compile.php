@@ -52,9 +52,8 @@ unset($phar);
 
 function addFile($phar, $file)
 {
-  $path = strtr(str_replace(__DIR__ . DIRECTORY_SEPARATOR, '', $file->getRealPath()), '\\', '/');
-  echo $path . "\n";
-  $phar->addFile($file, $path);
+  $localPath = strtr(str_replace(__DIR__ . DIRECTORY_SEPARATOR, '', $file->getRealPath()), '\\', '/');
+  $phar->addFile($file, $localPath);
 }
 
 function addCliLabBin($phar)
