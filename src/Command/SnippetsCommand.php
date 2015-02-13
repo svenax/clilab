@@ -5,7 +5,7 @@ use Symfony\Component\Console\Helper\Table;
 
 use CliLab\Utils\StringUtils;
 
-class SnippetsCommand extends CommandBase
+class SnippetsCommand extends BaseCommand
 {
   protected function createName()
   {

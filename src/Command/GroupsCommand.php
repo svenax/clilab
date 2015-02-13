@@ -3,7 +3,7 @@ namespace CliLab\Command;
 
 use Symfony\Component\Console\Helper\Table;
 
-class GroupsCommand extends CommandBase
+class GroupsCommand extends BaseCommand
 {
   protected function createName()
   {
